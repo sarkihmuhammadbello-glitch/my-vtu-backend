@@ -1,0 +1,7 @@
+.env
+node_modules/
+.git/
+*.log
+server-backup.js
+server-before-auth.js
+server-before-wallet.js
