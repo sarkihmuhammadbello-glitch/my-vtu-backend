@@ -148,12 +148,16 @@ async function apiRequest(path, options = {}) {
 
   let result = {};
 
-  try {
-    result = await response.json();
+    try {
+    response = await fetch(`${API_BASE_URL}${path}`, {
+      ...options,
+      headers
+    });
   } catch (error) {
-    // Handle an empty or non-JSON response.
+    throw new Error(
+      "Cannot connect to the HMB VTU online backend. Please try again."
+    );
   }
-
   if (!response.ok) {
     if (response.status === 401 && token) {
       sessionStorage.removeItem(TOKEN_KEY);
