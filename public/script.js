@@ -117,6 +117,7 @@ loginTab.addEventListener("click", () => {
 // BACKEND REQUEST HELPER
 // --------------------------------
 
+
 async function apiRequest(path, options = {}) {
   const headers = {
     ...(options.headers || {})
@@ -139,15 +140,17 @@ async function apiRequest(path, options = {}) {
       ...options,
       headers
     });
-  } throw new Error(
-  "Cannot connect to the HMB VTU online backend. Please try again."
-);
+  } catch (error) {
+    throw new Error(
+      "Cannot connect to the HMB VTU online backend. Please try again."
+    );
+  }
 
   let result = {};
 
   try {
     result = await response.json();
-  } catch {
+  } catch (error) {
     // Handle an empty or non-JSON response.
   }
 
