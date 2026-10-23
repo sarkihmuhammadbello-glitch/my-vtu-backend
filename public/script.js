@@ -4,7 +4,7 @@
 // HMB VTU TEST MODE
 // Real purchases and payments are disabled.
 const LIVE_PURCHASES_ENABLED = false;
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = const API_BASE_URL = "https://my-vtu-backend-2-2dt9.onrender.com";
 const TOKEN_KEY = "hmbVtuToken";
 
 const $ = (id) => document.getElementById(id);
@@ -139,11 +139,9 @@ async function apiRequest(path, options = {}) {
       ...options,
       headers
     });
-  } catch {
-    throw new Error(
-      "Cannot connect to the backend. Make sure your server is running at http://localhost:3000."
-    );
-  }
+  } throw new Error(
+  "Cannot connect to the HMB VTU online backend. Please try again."
+);
 
   let result = {};
 
