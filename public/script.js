@@ -4,7 +4,7 @@
 // HMB VTU TEST MODE
 // Real purchases and payments are disabled.
 const LIVE_PURCHASES_ENABLED = false;
-const API_BASE_URL = const API_BASE_URL = "https://my-vtu-backend-2-2dt9.onrender.com";
+const API_BASE_URL = "https://my-vtu-backend-2-2dt9.onrender.com";
 const TOKEN_KEY = "hmbVtuToken";
 
 const $ = (id) => document.getElementById(id);
